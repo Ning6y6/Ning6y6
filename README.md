@@ -2,11 +2,20 @@
 
 I work with Swift, Java and Python. My projects cover native iOS apps, game refactoring and computer vision preprocessing.
 
+[![Swift, Java, Python and OpenCV](https://skillicons.dev/icons?i=swift,java,py,opencv&perline=4)](https://github.com/tandpfun/skill-icons)
+
 ## Personal projects
 
 ### [Evenfare (食衡)](https://github.com/Ning6y6/Personal-Nutrition-Fitness)
 
 An offline iOS app for weighed meal logging, nutrition history and reusable meal templates. I develop the SwiftUI app and its `FoodDecisionCore` Swift package.
+
+<p>
+  <img src="assets/evenfare-meal.png" width="210" alt="Evenfare meal entry with a weighed demo meal" />
+  <img src="assets/evenfare-foods.png" width="210" alt="Evenfare local food catalogue with source information" />
+</p>
+
+<sub>Meal entry and food selection, using demo data.</sub>
 
 The main engineering work is in nutrition validation, historical snapshots, versioned SwiftData storage and local backup recovery. Save commands isolate writes from unfinished drafts, and missing nutrient values stay distinct from known zeroes.
 
@@ -17,6 +26,12 @@ Code: [meal save transactions](https://github.com/Ning6y6/Personal-Nutrition-Fit
 ### [JavaFX Tetris — refactoring and extensions](https://github.com/Ning6y6/-COMP2042-CW2025)
 
 I refactored and extended an existing coursework game, separating board rules, input commands, game states and JavaFX rendering. I added Hold, Hard Drop, ghost previews and remappable controls, with JUnit tests for the core rules.
+
+<p>
+  <img src="assets/tetris-demo.gif" width="440" alt="JavaFX Tetris gameplay: movement, rotation, Hold and Hard Drop" />
+</p>
+
+<sub>Scripted demo rendered from the project.</sub>
 
 Selected changes: [board encapsulation](https://github.com/Ning6y6/-COMP2042-CW2025/commit/8ce165b4b42cb3488654deb3946dd3ad63308e75) · [UI and game-loop separation](https://github.com/Ning6y6/-COMP2042-CW2025/commit/a17a9cb486da85d4ab91b1a1bd8d6fda12f02cdb)
 
@@ -39,3 +54,11 @@ A hackathon voucher prototype with issuing, scanning, redemption and revocation 
 Selected changes: [storage adapters](https://github.com/Notthack/Dash-Track/commit/9d2c52fd35b70823714a96c05b58b4f7d1530e43) · [mobile interface](https://github.com/Notthack/Dash-Track/commit/295ff57b02c42bd2b428af0818231a11fae66561)
 
 **JavaScript · Node.js · Express · Dash Testnet SDK**
+
+---
+
+<p>
+  <a href="https://github.com/egorthinks/git-bonsai">
+    <img src="https://raw.githubusercontent.com/Ning6y6/Ning6y6/bonsai/bonsai-growth.gif" width="240" alt="A pixel bonsai grown from my GitHub history" />
+  </a>
+</p>
