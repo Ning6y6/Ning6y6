@@ -1,0 +1,63 @@
+name: Grow profile bonsai
+
+on:
+  schedule:
+    - cron: '17 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-bonsai
+  cancel-in-progress: false
+
+jobs:
+  grow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Grow bonsai from public GitHub history
+        uses: egorthinks/git-bonsai@bec04c39f62731fdb28c3b82322ef21cbf3bdfac # v1
+        with:
+          github-token: ${{ github.token }}
+          user: Ning6y6
+          output-dir: generated
+          commit: 'false'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-bonsai
+          path: generated/bonsai*
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: grow
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: bonsai
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: profile-bonsai
+          path: .bonsai-generated
+      - name: Publish bonsai images
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in bonsai.svg bonsai.png bonsai.gif bonsai-growth.gif; do
+            test -s ".bonsai-generated/$file"
+            cp ".bonsai-generated/$file" "$file"
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- bonsai.svg bonsai.png bonsai.gif bonsai-growth.gif
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'chore: refresh profile bonsai'
+          git push origin HEAD:bonsai
