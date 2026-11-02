@@ -51,7 +51,7 @@ My changes: [pipeline integration](https://github.com/UNM-SEGP-Group-6/Skin-Canc
 
 A hackathon voucher prototype with issuing, scanning, redemption and revocation flows. I worked across the Express API, local and Dash Drive storage adapters, and the JavaScript interface, including mobile layout. Payments are simulated.
 
-Selected changes: [storage adapters](https://github.com/Notthack/Dash-Track/commit/9d2c52fd35b70823714a96c05b58b4f7d1530e43) · [mobile interface](https://github.com/Notthack/Dash-Track/commit/295ff57b02c42bd2b428af0818231a11fae66561)
+Selected changes: [storage adapters](https://github.com/Notthack/Dash-Track/commit/044a088a8d7f100f539392b5cd3c3389d1fcdd68) · [mobile interface](https://github.com/Notthack/Dash-Track/commit/181a48ad370dc10d73e9a4b9df792a852056f62b)
 
 **JavaScript · Node.js · Express · Dash Testnet SDK**
 
